@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/rakesh/study/Django/Projects/a_sm_env"
+VIRTUAL_ENV="/home/rakesh/study/Django/Projects/bookmarks/a_sm_env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
