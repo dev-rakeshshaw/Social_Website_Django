@@ -7,7 +7,7 @@ import requests
 class ImageCreateForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = ['title', 'url', 'description']
+        fields = ['title',"slug", 'url', 'description']
         widgets = {
             'url': forms.HiddenInput,
         }
@@ -30,6 +30,7 @@ class ImageCreateForm(forms.ModelForm):
         image = super().save(commit=False)
         image_url = self.cleaned_data['url']
         name = slugify(image.title)
+        slug = slugify(image.title)
         extension = image_url.rsplit('.', 1)[1].lower()
         image_name = f'{name}.{extension}'
         # download image from the given URL
